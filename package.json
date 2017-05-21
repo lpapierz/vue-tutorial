@@ -1,0 +1,23 @@
+{
+  "name": "vue-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "dependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.5.3"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run build-css:watch\" \"npm run serve\"",
+    "serve": "lite-server",
+    "build-css": "node-sass scss -o styles",
+    "build-css:watch": "npm run build-css && node-sass scss -o styles -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

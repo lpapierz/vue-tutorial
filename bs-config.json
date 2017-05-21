@@ -1,0 +1,11 @@
+{
+    "port": 8000,
+    "logLevel": "silent",
+    "debugInfo": false,
+    "server": {
+        "baseDir": "./",
+        "routes": {
+            "/node_modules": "node_modules"
+        }
+    }
+}
