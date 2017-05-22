@@ -4,10 +4,12 @@
   "description": "",
   "main": "src/main.js",
   "dependencies": {
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.3.0",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "concurrently": "^3.4.0",
+    "eslint-plugin-html": "^2.0.3",
     "lite-server": "^2.3.0",
     "node-sass": "^4.5.3"
   },
