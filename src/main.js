@@ -10,14 +10,22 @@ new Vue({
     data() {
         return {
             counter: 0,
+            quantity: 0,
             message: 'Type your text here...',
             text: 'Hello world!',
-            items: items
+            items: items,
+            x: 0
         };
     },
     methods: {
         increment() {
             this.counter++;
+        },
+        decrement() {
+            this.counter--;
+        },
+        xCoordinate(e) {
+            this.x = e.clientX;
         }
     }
 });
