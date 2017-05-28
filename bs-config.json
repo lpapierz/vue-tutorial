@@ -4,8 +4,7 @@
     "debugInfo": false,
     "server": {
         "baseDir": "./",
-        "routes": {
-            "/node_modules": "node_modules"
-        }
+        "index": "index2.html"
+
     }
 }

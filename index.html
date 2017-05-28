@@ -5,42 +5,36 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/styles2.css" rel="stylesheet">
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/lodash"></script>
 </head>
 
 <body>
     <div id="app">
-        <h3>Type here:</h3>
-        <textarea v-model="message" class="message" rows="5" maxlength="72"></textarea>
-        <p class="booktext">{{message}}</p>
-        <ul>
-            <li v-for="item in items">
-                {{item}}
-            </li>
-        </ul>
+        <child :text="message"></child>
+        <child :text="message"></child>
 
-        <div>
-            <div class="colorBackgound pull-left" :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }" @mousemove="xCoordinate">
-                <button @click="decrement">-</button> Counter: {{counter}}
-                <button @click="increment">+</button>
-                <p>Pixels across: {{ x }}</p>
-            </div>
-            <div class="shopItem pull-left">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/backpack.jpg" width="235" height="300" />
-                <div class="quantity">
-                    <button class="dec" @click="quantity > 0 ? quantity-- : 0">-</button>
-                    <span class="quantity-text">Quantity: {{ quantity }}</span>
-                    <button class="inc" @click="quantity++">+</button>
-                </div>
-                <button class="submit" @click="">Submit</button>
-            </div>
-        </div>
+        <hr>
+        <h3>
+            <button class="dec" @click="decrement">-</button> Adjust the state
+            <button class="inc" @click="increment">+</button>
+        </h3>
+        <h2 class="state">This is the app state: <span class="num">{{ count }}</span></h2>
+        <hr>
+        <p>This is a child counter that is using a static integer as props</p>
+        <h4>
+            <count :count="1"></count>
+        </h4>
+        <hr>
+<p>This is the same child counter and it is using the state as props</p>
+        <h4>
+            <count :count="count"></count>
+        </h4>
     </div>
     <!-- built files will be auto injected -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Bitter|Lato">
-    <script src="src/main.js"></script>
+    <script src="src/main2.js"></script>
 </body>
 
 </html>
