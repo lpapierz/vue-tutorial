@@ -1,11 +1,12 @@
-body {
-    font-family: 'Lato', sans-serif;
+    body {
+        font-family: 'Lato', sans-serif;
+    }
 
     #app {
         text-align: center;
         font-size: 18px;
         padding: 0 70px;
-        max-width: 370px;
+        max-width: 800px;
         margin-left: auto;
         margin-right: auto;
         color: #006494;
@@ -18,21 +19,82 @@ body {
             padding: 10px 13px;
             cursor: pointer;
         }
-
         .num {
             color: #AF007E;
         }
+        hr {
+            opacity: .5;
+        }
     }
-}
 
-.pull-right {
-    float: right;
-}
+    .post {
+        letter-spacing: 0.04em;
+        font-family: 'Playfair Display';
+        font-size: 16px;
+        color: #fff;
+        background-color: #212222;
+        line-height: 1.4em;
+        .main-photo {
+            width: 300px;
+        }
+        .main-profile {
+            border: solid 3px #eee;
+            margin: -25px 0 0 20px;
+            width: 80px;
+            float: left;
+            position: relative;
+        }
+        .name {
+            color: #ccc;
+        }
+        .main-info {
+            text-align: left;
+            padding: 10px 20px;
+            float: left;
+            h3 {
+                margin: 5px 0 4px;
+            }
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        }
+        ul {
+            margin: 0;
+        }
+        li {
+            padding: 10px 0;
+            text-align: left;
+            border-bottom: solid 1px #555;
+            list-style-type: none;
+            width: 300px;
+        }
+        input {
+            font-family: 'Playfair Display', serif;
+            width: 280px;
+            margin: 30px 0;
+            padding: 8px 10px;
+            outline: 0;
+        }
+        hr {
+            margin: 25px 0 0 40px;
+            width: 300px;
+            border-top: 0;
+            border-bottom: 1px solid #555;
+            opacity: 1!important;
+        }
+    }
 
-.pull-left {
-    float: left;
-}
+    .col {
+        width: 400px;
+        padding: 30px 0;
+    }
 
-hr {
-    opacity: .5;
-}
+    .pull-right {
+        float: right;
+    }
+
+    .pull-left {
+        float: left;
+    }

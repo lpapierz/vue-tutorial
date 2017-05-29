@@ -18,12 +18,23 @@ Vue.component('count', {
     template: '<div class="num">{{ count }}</div>'
 });
 
+Vue.component('individual-comment', {
+    template: `<li>{{ comment }}</li>`,
+    props: ['comment']
+});
+
 var app = new Vue({
     el: '#app',
     data() {
         return {
             message: "Hello Mr. Papi",
             count: 0,
+            newComment: '',
+            comments: [
+                'Looks great!',
+                'I love this picture.',
+                'Where is that?'
+            ]
         }
     },
     methods: {
@@ -32,6 +43,10 @@ var app = new Vue({
         },
         increment() {
             this.count++;
+        },
+        addComment(){
+            this.comments.push(this.newComment);
+            this.newComment = '';
         }
     }
 });

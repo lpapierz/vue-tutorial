@@ -12,28 +12,45 @@
 
 <body>
     <div id="app">
-        <child :text="message"></child>
-        <child :text="message"></child>
 
-        <hr>
-        <h3>
-            <button class="dec" @click="decrement">-</button> Adjust the state
-            <button class="inc" @click="increment">+</button>
-        </h3>
-        <h2 class="state">This is the app state: <span class="num">{{ count }}</span></h2>
-        <hr>
-        <p>This is a child counter that is using a static integer as props</p>
-        <h4>
-            <count :count="1"></count>
-        </h4>
-        <hr>
-        <p>This is the same child counter and it is using the state as props</p>
-        <h4>
-            <count :count="count"></count>
-        </h4>
+        <div class="pull-left col">
+            <child :text="message"></child>
+            <child :text="message"></child>
+
+            <hr>
+            <h3>
+                <button class="dec" @click="decrement">-</button> Adjust the state
+                <button class="inc" @click="increment">+</button>
+            </h3>
+            <h2 class="state">This is the app state: <span class="num">{{ count }}</span></h2>
+            <hr>
+            <p>This is a child counter that is using a static integer as props</p>
+            <h4>
+                <count :count="1"></count>
+            </h4>
+            <hr>
+            <p>This is the same child counter and it is using the state as props</p>
+            <h4>
+                <count :count="count"></count>
+            </h4>
+        </div>
+
+        <div class="pull-right col post">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/vue-post-photo.jpg" class="main-photo">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/vue-main-profile.jpg" class="main-profile">
+            <div class="main-info">
+                <span class="name">Name Surname</span>
+                <h3>"Lighthouse on the sea"</h3>
+            </div>
+            <hr>
+            <ul>
+                <li v-for="comment in comments" is="individual-comment" :comment="comment"></li>
+            </ul>
+            <input type="text" v-model="newComment" @keyup.enter="addComment" placeholder="Add a comment" />
+        </div>
     </div>
     <!-- built files will be auto injected -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Bitter|Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Bitter|Lato|Playfair+Display">
     <script src="src/main2.js"></script>
 </body>
 
