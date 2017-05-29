@@ -49,6 +49,13 @@
             <input type="text" v-model="newComment" @keyup.enter="addComment" placeholder="Add a comment" />
         </div>
     </div>
+    <script type="text/x-template" id="comment-template">
+        <li>
+            <img :src="comment.authorImg" class="post-img" />
+            <small>{{ comment.author }}</small>
+            <p class="post-comment">"{{ comment.text }}"</p>
+        </li>
+    </script>
     <!-- built files will be auto injected -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Bitter|Lato|Playfair+Display">
     <script src="src/main2.js"></script>

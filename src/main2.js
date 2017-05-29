@@ -19,7 +19,7 @@ Vue.component('count', {
 });
 
 Vue.component('individual-comment', {
-    template: `<li>{{ comment }}</li>`,
+    template: '#comment-template',
     props: ['comment']
 });
 
@@ -31,9 +31,21 @@ var app = new Vue({
             count: 0,
             newComment: '',
             comments: [
-                'Looks great!',
-                'I love this picture.',
-                'Where is that?'
+                {
+                    text: 'Looks great!',
+                    author: 'Robin Rendle',
+                    authorImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/v-coffee.jpg'
+                },
+                {
+                    text: 'I love this picture.',
+                    author: 'Miriam Suzanne',
+                    authorImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/v-miriam.jpg'
+                },
+                {
+                    text: 'Where are you?',
+                    author: 'Geoff Graham',
+                    authorImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/v-geoff.jpg'
+                }
             ]
         }
     },
@@ -44,8 +56,13 @@ var app = new Vue({
         increment() {
             this.count++;
         },
-        addComment(){
-            this.comments.push(this.newComment);
+        addComment() {
+            const newCommentObj = {
+                text: this.newComment,
+                author: 'Magoo',
+                authorImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/v-skull.jpg'
+            };
+            this.comments.push(newCommentObj);
             this.newComment = '';
         }
     }
